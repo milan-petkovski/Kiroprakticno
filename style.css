@@ -1,0 +1,147 @@
+body {
+    background-color: #000;
+}
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 10px 50px;
+    padding: 10px 20px;
+    background: transparent;
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+}
+header a {
+    color: #fff;
+    font-weight: 700;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+header a:hover {
+    color: #ffffffce;
+}
+header img {
+    height: 40px;
+    width: auto;
+}
+header #btn {
+    border-radius: 50px;
+    padding: 8px 14px;
+    background-color: #c59423;
+    transition: 0.5s;
+}
+.svg {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.svg p {
+    color: #fff;
+    font-size: 15px;
+}
+.popup-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.75); /* Malo tamnija pozadina */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.4s ease-in-out, visibility 0.4s ease-in-out;
+}
+.popup-overlay.show {
+    opacity: 1;
+    visibility: visible;
+}
+.popup-content {
+    background: #111;
+    color: #fff;
+    padding: 2.5rem;
+    border-radius: 12px;
+    max-width: 550px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+    position: relative;
+    transform: translateY(20px);
+    transition: transform 0.4s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+    opacity: 0;
+    text-align: center;
+}
+.popup-overlay.show .popup-content {
+    transform: translateY(0);
+    opacity: 1;
+}
+#popup-title {
+    font-size: 2.2rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    color: #c59423;
+}
+#popup-description {
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-bottom: 2rem;
+    color: #ccc;
+}
+.close-btn {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    font-size: 2.5rem;
+    cursor: pointer;
+    color: #fff;
+    opacity: 0.7;
+    transition: opacity 0.3s;
+}
+.close-btn:hover {
+    opacity: 1;
+}
+#buy-course-btn {
+    margin-top: 1rem;
+    background-color: #c59423;
+    color: #fff;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 50px;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    transition: background-color 0.3s, transform 0.3s;
+}
+#buy-course-btn:hover {
+    background-color: #d1a542;
+    transform: translateY(-2px);
+}
+.clickable-part {
+    cursor: pointer;
+    transition: transform 0.3s ease-in-out, fill 0.3s ease-in-out;
+    transform-origin: center center;
+}
+.clickable-part:hover {
+    transform: scale(1.1);
+    fill: #ff3333;
+}
+#tooltip {
+    position: fixed;
+    background-color: #333;
+    color: #fff;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 14px;
+    pointer-events: none;
+    z-index: 1001;
+    transform: translate(-50%, -100%);
+    transition: opacity 0.2s ease;
+    opacity: 0;
+}
+#tooltip.show {
+    opacity: 1;
+}
